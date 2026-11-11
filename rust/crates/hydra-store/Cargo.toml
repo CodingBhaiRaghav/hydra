@@ -1,0 +1,16 @@
+[package]
+name = "hydra-store"
+description = "Rust port of Hydra's level storage (src/main/level) on redb"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+hydra-types = { path = "../hydra-types" }
+serde.workspace = true
+serde_json.workspace = true
+redb.workspace = true
+thiserror.workspace = true
+
+[dev-dependencies]
+tempfile.workspace = true

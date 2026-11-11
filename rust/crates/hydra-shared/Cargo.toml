@@ -1,0 +1,16 @@
+[package]
+name = "hydra-shared"
+description = "Rust port of Hydra's pure shared logic (src/shared)"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+hydra-types = { path = "../hydra-types" }
+serde.workspace = true
+serde_json.workspace = true
+url.workspace = true
+regex.workspace = true
+time.workspace = true
+thiserror.workspace = true
+unicode-normalization = "0.1"

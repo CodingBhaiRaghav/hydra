@@ -31,3 +31,6 @@ native/torrent-bridge/build/
 native/torrent-bridge/vcpkg_installed/
 *.local.ts
 src/renderer/public/*.local/
+
+# Rust port build output
+/rust/target
