@@ -103,3 +103,30 @@ case), plus new tests for archive.org parsing, download-directory rules, the
 level store (isolation, ordering, reopen, typed repositories), and the hoster
 URL/HTML extraction logic. Network-dependent hoster calls are not exercised by
 tests.
+
+## Building on Windows
+
+Everything here is pure Rust except `ring`, pulled in by `reqwest`'s
+`rustls-tls` feature, which compiles a small amount of C. Windows therefore
+needs the MSVC C++ build tools before any crate will link; without them `cargo`
+stops with ``linker `link.exe` not found``.
+
+Install the free Visual Studio Build Tools with the C++ workload, in an
+administrator terminal:
+
+```powershell
+winget install Microsoft.VisualStudio.2022.BuildTools --override "--quiet --add Microsoft.VisualStudio.Workload.VCTools --includeRecommended"
+```
+
+Open a new terminal afterwards, then:
+
+```powershell
+where.exe link        # ...\VC\Tools\MSVC\<version>\bin\Hostx64\x64\link.exe
+rustup show           # host: x86_64-pc-windows-msvc
+cd rust
+cargo test --workspace
+cargo run -p hydra-demo
+```
+
+This is a local compiler toolchain only: no API key, account or paid service is
+involved at any point.
