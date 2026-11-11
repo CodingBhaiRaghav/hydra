@@ -1,0 +1,32 @@
+[workspace]
+resolver = "2"
+members = [
+  "crates/hydra-types",
+  "crates/hydra-shared",
+  "crates/hydra-store",
+  "crates/hydra-hosters",
+  "crates/hydra-demo",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+authors = ["Hydra contributors"]
+
+[workspace.dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "2"
+url = "2"
+regex = "1"
+time = { version = "0.3", features = ["parsing", "formatting", "macros"] }
+redb = "2"
+reqwest = { version = "0.12", default-features = false, features = [
+  "rustls-tls",
+  "charset",
+  "gzip",
+  "http2",
+] }
+tokio = { version = "1", features = ["rt", "macros", "time"] }
+tempfile = "3"

@@ -1,0 +1,16 @@
+[package]
+name = "hydra-hosters"
+description = "Rust port of Hydra's hoster download-link resolvers (src/main/services/hosters)"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+hydra-types = { path = "../hydra-types" }
+reqwest.workspace = true
+tokio.workspace = true
+url.workspace = true
+regex.workspace = true
+thiserror.workspace = true
+serde.workspace = true
+serde_json.workspace = true

@@ -1,0 +1,12 @@
+[package]
+name = "hydra-demo"
+description = "Runnable example of the ported Hydra Rust crates"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+hydra-types = { path = "../hydra-types" }
+hydra-shared = { path = "../hydra-shared" }
+hydra-store = { path = "../hydra-store" }
+hydra-hosters = { path = "../hydra-hosters" }
